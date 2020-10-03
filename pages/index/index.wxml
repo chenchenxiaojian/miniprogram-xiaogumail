@@ -1,0 +1,9 @@
+<!--pages/index/index.wxml-->
+<view class="page-bg">
+  <view>
+    <van-button type="xiaoguIndex" class="btn1" bind:click="toAddMail">写信给Ta</van-button>
+  </view>
+  <view>
+    <van-button type="xiaoguIndex" class="btn2" bind:click="toPage">打开信箱</van-button>
+  </view>
+</view>

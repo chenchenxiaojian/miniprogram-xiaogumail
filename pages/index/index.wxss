@@ -1,0 +1,14 @@
+/* pages/index/index.wxss */
+
+.btn1{
+  position: absolute;
+  left: 50rpx;
+  bottom: 320rpx;
+}
+.btn2{
+  position: absolute;
+  left: 50rpx;
+  bottom: 200rpx;
+}
+
+  

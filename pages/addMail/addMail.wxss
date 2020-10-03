@@ -1,0 +1,75 @@
+/* pages/addMail/addMail.wxss */
+.wx-right{
+  text-align: right;
+}
+
+.mail-p{
+  padding: 40rpx;
+  overflow-x: auto;
+  position: relative;
+}
+.font-color{
+  color: #fff;
+}
+.mail-body{
+  display: flex;
+  padding: 12px;
+  background-color: grey;
+  margin-bottom: 12px;
+}
+.wx-mail-f{
+  flex:1;
+}
+.wx-mail-p{
+  padding:8px;
+}
+.wx-opacity{
+  opacity: 1;
+}
+.wx-h4{
+  color: #f40;
+  font-size: 18px;
+  font-weight: 900;
+}
+.wx-h5{
+  color: #f40;
+  font-size: 14px;
+}
+.wx-h6{
+  color:#f40;
+  font-size: 12px;
+}
+.wx-mail-up{
+  height: 70px;
+  padding: 12px 0;
+  display: flex;
+  text-align: center;
+}
+.wx-mail-up1{
+  background-color: #000;
+  color: #fff;
+  line-height: 70px;
+}
+.wx-mail-up2{
+  background-color: #000;
+  color: #fff;
+  line-height: 70px;
+  margin:0 6px;
+}
+.wx-mail-up3{
+  background-color: #fff;
+  color: #000;
+  line-height: 70px;
+  font-size:32px;
+}
+.input{
+  border-radius: 5px;
+  overflow:hidden;
+  margin-left: 4px;
+}
+.van-button--small{
+  position: relative;
+  max-width: 40px;
+  border: 1px white solid;
+  /* background-color:  */
+}

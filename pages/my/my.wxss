@@ -1,0 +1,26 @@
+/* pages/my/my.wxss */
+
+.userlogo{
+  margin-top: 50px;
+  border-radius: 50%;
+}
+
+.userlogo image{
+  width: 111px;
+  height: 111px;
+}
+.nick{
+  margin-top: 10px;
+}
+.about{
+  margin-top: 50px;
+}
+.Logoff{
+  font-size: 15px;
+  color: white;
+  margin-top: 15px;
+  display: block;
+  color: rgba(144, 145, 147, 0.823);
+  
+
+}

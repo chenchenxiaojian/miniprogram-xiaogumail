@@ -1,0 +1,45 @@
+<!--pages/my/my.wxml-->
+<view class="page-bg">
+	<!-- <view class="index-bg"> -->
+	<view class="wx-reg-p wx-reg-flex">
+		<view class="wx-reg-bg wx-reg-m wx-reg-p">
+			<view class="wx-center">
+				<text class="wx-font wx-reg-m-t">个人中心</text>
+			</view>
+			<view class="wx-center userlogo">
+				<!-- <image src="../../images/userlogo.fw.png"></image> -->
+				<view style="width:20vw; height:20vw; left:50%; position:relative;transform:translateX(-50%); border-radius:50%;overflow:hidden">
+					<open-data type="userAvatarUrl"></open-data>
+				</view>
+			</view>
+			<view class="wx-center nick">
+				<open-data type="userNickName" lang="zh_CN" class="wx-font-min-w wx-reg-m-t"></open-data>
+				<!-- <text class="wx-font-min-w wx-reg-m-t" open-type="getUserInfo">{{nickname}}</text> -->
+			</view>
+			<view class="wx-center nick">
+				<text class="wx-font-min-w wx-reg-m-t" wx:if="{{userPhone!=''}}">{{userPhone}}</text>
+				<text  wx:if="{{userPhone !=''}}" class="Logoff" bind:tap="logoff">Logoff Phone</text>
+				<navigator wx:else url="/pages/reg/reg" style="color:rgba(247, 193, 193, 0.947); font-size:12px; ">Bind the phone</navigator>
+			</view>
+			<view class="wx-center about">
+				<text class="wx-font-min-w wx-reg-m-t">了解小谷邮局</text>
+			</view>
+
+			<view class="ad">
+				<image src="../../images/ad.fw.png" alt=""></image>
+			</view>
+		</view>
+	</view>
+
+
+
+
+	<van-tabbar active="{{active}}" active-color="#f3ea12" bind:change="onChange">
+		<van-tabbar-item icon="star-o">写信</van-tabbar-item>
+		<van-tabbar-item icon="star-o" info="5">信箱</van-tabbar-item>
+		<van-tabbar-item icon="star-o" info="20">广场</van-tabbar-item>
+		<van-tabbar-item icon="star-o">发现</van-tabbar-item>
+		<van-tabbar-item icon="user-o">我的</van-tabbar-item>
+	</van-tabbar>
+	<!-- </view> -->
+</view>

@@ -1,0 +1,72 @@
+<!--pages/seeMail/seeMail.wxml-->
+<!--<view class="page-bg">
+ <view class="wx-reg-p wx-reg-flex">
+    <view class="wx-reg-bg wx-mail-i mail-p wx-opacity">
+      <view class="wx-center wx-reg-m-b" style="margin-bottom:5px">
+        <text class="wx-font" style="margin-left:2em">阅读信件</text>
+        <text class="wx-font" style="float:right">返回</text>
+      </view>
+      <view style="margin-bottom:24px">
+        <view class="mail-body">
+          <view class="wx-center wx-mail-p" style="background-color:#FFF">
+            <view class="wx-h4">27</view>
+            <view class="wx-h6">2019.13</view>
+          </view>
+          <view class="wx-mail-p" style="margin-left:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+            <view class="wx-h5" style="color:#000">一句话酸辣粉emmm</view>
+            <view class="wx-h6 wx-reg-flex" style="color:#999">
+              <view class="wx-mail-f">来自chenxiaojian</view>
+              <view style="padding:0 6px; color:#000">屏蔽Ta</view>
+              <view style="color:#000">投诉Ta</view>
+            </view>
+          </view>
+        </view>
+        <view style="margin-bottom:12px; height:140px; width:100%">
+          <image style="height:100%; width:100%; "src='https://i.loli.net/2020/09/25/Mpty7iBel6bmDG3.png'></image>
+        </view>
+        <view style="margin-bottom:12px; height:140px; width:100%">
+          <image style="height:100%; width:100%; "src='https://i.loli.net/2020/09/25/Mpty7iBel6bmDG3.png'></image>
+        </view>
+      </view>
+      <view class="wx-reg-m-t wx-center font-color">
+        <text style="padding-right:12px">回复信件</text>
+        <text>删除信件</text>
+      </view>
+    </view>
+  </view> -->
+<view class="page-body">
+	<van-panel use-footer-slot use-header-slot>
+		<view slot="header">
+			<van-collapse bind:change="panelChange" value="{{activeNames}}">
+				<van-collapse-item title="{{letter_title}}" value="详情">
+					<view>发件人：<view style="color:black;font-weight:500;display:inline">{{write_phone}}</view>
+					</view>
+					<view>收件人：<view style="color:black;font-weight:500;display:inline">{{accept_phone}}</view>
+					</view>
+					<view>时间：<view style="display:inline;color:black;font-weight:500">{{letter_date}}</view>
+					</view>
+				</van-collapse-item>
+			</van-collapse>
+		</view>
+		<view style="margin-top:10px;">
+			<view style="font-size:15px;width:90%; margin:0 auto; margin-bottom:5px;white-space:pre-wrap;">{{letter_content}}</view>
+			<view class="letter-photo-box">
+				<image class="letter-photo" src="{{letter_photo_1}}"></image>
+				<image class="letter-photo" src="{{letter_photo_2}}"></image>
+			</view>
+		</view>
+		<view slot="footer" style="display:flex; flex-wrap:wrap; margin-top:10px;margin-bottom:10px;justify-content:center">
+			<van-button size="small" bind:tap="return_letter">回复邮件</van-button>
+			<van-button size="small" bind:tap="delete_letter">删除邮件</van-button>
+			<van-button size="small">投诉Ta</van-button>
+			<van-button size="small">举报Ta</van-button>
+		</view>
+	</van-panel>
+	<!-- <van-tabbar active="{{active}}" active-color="#f3ea12" bind:change="onChange">
+		<van-tabbar-item icon="star-o">写信</van-tabbar-item>
+		<van-tabbar-item icon="star-o" info="5">信箱</van-tabbar-item>
+		<van-tabbar-item icon="star-o" info="20">广场</van-tabbar-item>
+		<van-tabbar-item icon="star-o" dot>发现</van-tabbar-item>
+		<van-tabbar-item icon="user-o">我的</van-tabbar-item>
+	</van-tabbar> -->
+</view>

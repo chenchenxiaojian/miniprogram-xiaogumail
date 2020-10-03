@@ -1,0 +1,36 @@
+<!--pages/myMail/myMail.wxml-->
+
+<wxs  src="myMail.wxs" module="tools" />
+<view class="page-bg">
+	<view class="wx-reg-p wx-reg-flex">
+		<view class="wx-reg-bg wx-mail-f mail-p wx-opacity">
+			<view class="wx-center wx-reg-m-b" style="margin-bottom:4px">
+				<text class="wx-font" style="margin-left:2em">我的信箱</text>
+				<text class="wx-font" style="float: right" bind:tap="refresh">刷新</text>
+				<van-toast id="van-toast" />
+			</view>
+			<view style="margin-bottom:12px;" wx:for="{{letters}}" >
+				<navigator url="{{'/pages/seeMail/seeMail?item=' + tools.navigator_data(item)}}">
+					<view class="mail-body">
+						<view style="display:flex; align-items:center;height:50%; width:100%;margin-left: 10px; ">
+							<view wx:if="{{item.not_read}}" class="mail-statue"></view>
+							<text style="font-weight:700">{{item.write_phone}}</text>
+						</view>
+						<view class="letter-time">{{tools.substring(item.letter_date,0,7)}}</view>
+						<view class="letter-title">标题:{{item.letter_title}}</view>
+					</view>
+				</navigator>
+			</view>
+			<view class="wx-reg-m-t wx-center font-color">
+				加载更多
+			</view>
+		</view>
+	</view>
+	<van-tabbar active="{{active}}" active-color="#f3ea12" bind:change="onChange">
+		<van-tabbar-item icon="star-o">写信</van-tabbar-item>
+		<van-tabbar-item icon="star-o" info="5">信箱</van-tabbar-item>
+		<van-tabbar-item icon="star-o" info="20">广场</van-tabbar-item>
+		<van-tabbar-item icon="star-o" dot>发现</van-tabbar-item>
+		<van-tabbar-item icon="user-o">我的</van-tabbar-item>
+	</van-tabbar>
+</view>

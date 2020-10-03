@@ -1,0 +1,82 @@
+<view class="page-bg">
+	<view class="wx-reg-p wx-reg-flex">
+		<view class="wx-reg-bg wx-mail-f mail-p wx-opacity">
+			<view class="wx-center wx-reg-m-b" style="margin-bottom:10px;">
+				<text class="wx-font" >投递写信</text>
+			</view>
+			<view style="margin-bottom:12px; padding:12px 0; background-color:rgba(221, 221, 221, 0.303);">
+				<view class="wx-reg-flex" style="padding:6px 12px;">
+					<view style="flex:1">
+						<view style="background-color:#FFF;" class="input">
+							<van-field model:value="{{accept_phone}}" placeholder="请填写Ta的手机号" clearable maxlength="11" label="收信人" titleWidth="55px" />
+						</view>
+						<view style="font-size:15px; margin-top:5px; text-align:center">
+							如果Ta是陌生人，你可以广场写信
+						</view>
+					</view>
+				</view>
+				<view class="wx-reg-flex" style="padding:6px 12px;">
+					<view style="flex:1;">
+						<view style="backround-color:#FFF;" class="input">
+							<van-field model:value="{{ userPhone }}" placeholder="请填写你的手机号码" clearable readonly maxlength="11" titleWidth="55px" label="写信人" />
+						</view>
+						<view style="margin:0 auto;margin-top:5px; width:80%">
+							<van-checkbox value="{{ checked }}" checked-color="#07c160" bind:change="checkboxClick">
+								<text class="wx-font-min" style="font-size:15px">是否让对方看不见你的手机号码</text>
+							</van-checkbox>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view style="margin-bottom:12px; background-color:rgba(221, 221, 221, 0.303);">
+				<view class="wx-reg-flex" style="padding:6px 12px;">
+					<view style="flex:1">
+						<view style="background-color:#FFF;margin-top:10px;" class="input">
+							<van-field v-model="value" placeholder="不超过20个字" clearable label="标题" titleWidth="40px" model:value="{{title}}" maxlength="20" />
+						</view>
+						<view class="wx-reg-flex wx-mail-up" style="margin:5px;">
+							<van-uploader show-uploader="{{true}}" file-list="{{ fileList }}" bind:after-read="afterRead" max-count="2" bind:delete="delete_photo" bind:tap="upload" />
+							<!-- <view class="wx-reg-m wx-mail-up1">40%</view>
+							<view class="wx-reg-m wx-mail-up2">50%</view>
+							<view class="wx-reg-m wx-mail-up3">+</view> -->
+						</view>
+						<view class="input" style="margin-bottom:10px">
+							<van-field model:value="{{message}}" label='内容' autosize placeholder="请输入内容" clearable type="textarea" titleWidth="40px" model:value="{{content}}"></van-field>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view style="margin-bottom:12px; background-color:rgba(221, 221, 221, 0.303);">
+				<view class="wx-reg-flex" style="padding:6px 12px;">
+					<view style="flex:1;">
+						<view class="input" style="background-color:#FFF;margin-top:10px;">
+							<van-field label="验证码" clearable placeholder="请输入短信验证码" maxlength="4" border="{{false}} use-button-slot" titleWidth="55px" model:value="{{sms}}">
+								<van-button slot="button" size="small" type="primary" bind:click="getIdCode">发送</van-button>
+							</van-field>
+						</view>
+						<view style="positive:relative;margin:7px">
+							<van-checkbox value="{{ second_checked }}" checked-color="#07c160" bind:change="second_checkboxClick">
+								<text class="wx-font-min" style="font-size:15px;" >是否同意协议 
+								</text>
+							</van-checkbox>
+						</view>
+						<view style="margin-buttom:15px">
+							<van-button type="primary" size="small" block bind:click="submitLetter">投递</van-button>
+						</view>
+					</view>
+				</view>
+			</view>
+
+
+		</view>
+	</view>
+
+
+	<van-tabbar active="{{active}}" active-color="#f3ea12" bind:change="onChange">
+		<van-tabbar-item icon="star-o">写信</van-tabbar-item>
+		<van-tabbar-item icon="star-o" info="5">信箱</van-tabbar-item>
+		<van-tabbar-item icon="star-o" info="20">广场</van-tabbar-item>
+		<van-tabbar-item icon="star-o" dot>发现</van-tabbar-item>
+		<van-tabbar-item icon="user-o">我的</van-tabbar-item>
+	</van-tabbar>
+</view>

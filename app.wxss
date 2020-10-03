@@ -1,0 +1,74 @@
+/**app.wxss**/
+
+page {
+  height: 100%;
+  font-size: 17px;
+  font-family: 'Microsoft Yahei';
+}
+
+.page-bg {
+  /* background-image: url("https://tvax1.sinaimg.cn/large/006VrJAJgy1gj2qxlo44mj307h0c7an7.jpg"); */
+  background-image: url("https://tva2.sinaimg.cn/large/006VrJAJgy1gj2y48cctij307h0c7an7.jpg");
+  background-size: 100% 100%;
+  height: 100%;
+  position: relative;
+}
+
+.wx-reg-flex {
+  display: flex;
+}
+
+.wx-reg-p {
+  padding: 40rpx;
+  height: 88%;
+  position: relative;
+}
+
+.wx-reg-m {
+  flex: 1;
+  opacity: 0.8;
+}
+
+.wx-reg-m-t {
+  margin-top: 48rpx;
+}
+
+.wx-reg-bg {
+  background-color: #ce4622;
+}
+
+.wx-font {
+  font-size: 22px;
+  color: #FFF;
+}
+
+.wx-font-min {
+  font-size: 16px;
+  color: #000;
+}
+
+.wx-font-min-w {
+  font-size: 16px;
+  color: #FFF;
+}
+
+.wx-center {
+  text-align: center;
+}
+
+.wx-left {
+  text-align: left;
+}
+
+.ad {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+}
+
+.ad image {
+  height: 50px;
+  width: 100%;
+}

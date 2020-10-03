@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/addMail/addMail",
+    "pages/seeMail/seeMail",
+    "pages/myMail/myMail",
+    "pages/my/my",
+    "pages/reg/reg"
+  ],
+  "usingComponents": {
+    "van-button": "/vantweapp/button/index",
+    "van-tabbar": "/vantweapp/tabbar/index",
+    "van-tabbar-item": "/vantweapp/tabbar-item/index",
+    "van-field": "/vantweapp/field/index",
+    "van-checkbox": "/vantweapp/checkbox/index",
+    "van-toast": "/vantweapp/toast/index",
+    "van-panel": "/vantweapp/panel/index",
+    "van-collapse": "/vantweapp/collapse/index",
+    "van-collapse-item":"/vantweapp/collapse-item/index",
+    "van-uploader": "/vantweapp/uploader/index"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小谷邮局",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,77 @@
+/* pages/myMail/myMail.wxss */
+.wx-right{
+  text-align: right;
+}
+.mail-p{
+  padding: 40rpx;
+  overflow-x: auto;
+  position: relative;
+}
+.font-color{
+  color: #fff;
+}
+.mail-body{
+  /* display: flex;
+  padding: 20px;
+  background-color: #f2f2f2;
+  margin-bottom: 12px; */
+  margin:0 auto;
+  margin-bottom: 12px;
+  width: 96%;
+  height: 60px;
+  background-color: white;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  
+}
+.mail-statue{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: blue;
+  margin-right: 5px;
+  
+}
+.wx-mail-f{
+  flex: 1;
+  /* 放大（比例），缩小（比例），项目剩余宽度 */
+}
+.wx.mail-p{
+  padding: 8px;
+}
+.wx-opacity{
+  opacity: 1;
+}
+.wx-h4{
+  color: #f40f40;
+  font-size: 18px;
+  font-weight: 900;
+  
+}
+.wx-h5{
+  color: #f40f40;
+  font-size: 14px;
+}
+.wx-h6{
+  color: #f40f40;
+  font-size: 12px;
+}
+.letter-time{
+  position: absolute;
+  top:5px;
+  right: 10px;
+  font-size: 14px;
+  color: gray;
+
+}
+.letter-title{
+  left: 10px;
+  width: 70%;
+  height: 50%;
+  position: relative;
+  /* background-color: green; */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

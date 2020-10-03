@@ -1,0 +1,11 @@
+/* pages/reg/reg.wxss */
+.wx-right {
+  text-align: right;
+}
+
+
+.van-button--small{
+  position: relative;
+  max-width: 80px;
+  border: 1px white solid;
+}

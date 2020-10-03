@@ -1,0 +1,24 @@
+.page-body{
+  width: 100%;
+  /* margin: 0 auto; */
+  height: auto;
+}
+.van-cell__title{
+  font-size: 20px;
+  font-weight: 600;
+}
+.van-button--small{
+  max-width: 70px;
+}
+.letter-photo-box{
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto;
+}
+.letter-photo{
+  width: 100px;
+  height: 100px;
+  /* border: 1px solid red; */
+  margin: 5px;
+}

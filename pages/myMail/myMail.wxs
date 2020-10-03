@@ -1,0 +1,11 @@
+var substring = function (val, start, end) {
+    if (val.length == 0 || val == undefined) {
+        return;
+    }
+    return val.substring(start, end);
+}
+var navigator_data = function(item){
+    return encodeURIComponent(JSON.stringify(item))
+}
+module.exports.substring = substring;
+module.exports.navigator_data = navigator_data;

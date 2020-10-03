@@ -1,0 +1,136 @@
+-- MySQL dump 10.13  Distrib 5.7.26, for Win64 (x86_64)
+--
+-- Host: localhost    Database: xiaogumail
+-- ------------------------------------------------------
+-- Server version	5.7.26-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `letters`
+--
+
+DROP TABLE IF EXISTS `letters`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `letters` (
+  `letter_id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '信件id',
+  `write_phone` varchar(11) NOT NULL COMMENT '写信手机号',
+  `accept_phone` varchar(11) NOT NULL COMMENT '收件手机号',
+  `letter_title` varchar(255) NOT NULL COMMENT '信件标题',
+  `letter_content` text NOT NULL COMMENT '信件内容',
+  `letter_date` datetime NOT NULL COMMENT '写信时间',
+  `letter_photo_1` varchar(255) DEFAULT NULL,
+  `letter_photo_2` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`letter_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `letters`
+--
+
+LOCK TABLES `letters` WRITE;
+/*!40000 ALTER TABLE `letters` DISABLE KEYS */;
+INSERT INTO `letters` VALUES (25,'123','13432','哈哈哈哈哈哈哈哈哈哈','哈哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈','2020-10-03 09:39:24','cloud://chenchenxiaojian-jc1zw.6368-chenchenxiaojian-jc1zw-1303822918/1601688463139.png','cloud://chenchenxiaojian-jc1zw.6368-chenchenxiaojian-jc1zw-1303822918/1601688518026.png'),(26,'13432','15013225799','你好吗？你好吗？你好吗？你好吗？你好吗？','你好吗？\n你好吗？你好吗？\n你好吗？\n你好吗？你好吗？你好吗？\n你好吗？你好吗？\n你好吗？\n你好吗？','2020-10-03 09:49:46','cloud://chenchenxiaojian-jc1zw.6368-chenchenxiaojian-jc1zw-1303822918/1601689764189.png','cloud://chenchenxiaojian-jc1zw.6368-chenchenxiaojian-jc1zw-1303822918/1601689773133.png');
+/*!40000 ALTER TABLE `letters` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user` (
+  `user_phone` varchar(11) NOT NULL COMMENT '用户手机号',
+  `user_credits` int(10) NOT NULL DEFAULT '10' COMMENT '用户信用值',
+  PRIMARY KEY (`user_phone`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES ('1231',10);
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_hide`
+--
+
+DROP TABLE IF EXISTS `user_hide`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_hide` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+  `user_phone` varchar(11) NOT NULL COMMENT '用户手机号',
+  `user_hide_phone` varchar(11) NOT NULL COMMENT '用户屏蔽手机号',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_hide`
+--
+
+LOCK TABLES `user_hide` WRITE;
+/*!40000 ALTER TABLE `user_hide` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_hide` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_letters`
+--
+
+DROP TABLE IF EXISTS `user_letters`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_letters` (
+  `letter_id` int(11) unsigned NOT NULL COMMENT '信件ID号',
+  `accept_phone` varchar(11) NOT NULL COMMENT '收件人',
+  `write_phone` varchar(11) NOT NULL COMMENT '写信人',
+  `not_read` int(11) NOT NULL DEFAULT '1' COMMENT '是否读取信件过1没读过，0读过',
+  `letter_title` varchar(255) NOT NULL COMMENT '标题',
+  `letter_content` varchar(255) NOT NULL COMMENT '内容',
+  `letter_date` datetime NOT NULL COMMENT '时间',
+  `letter_photo_1` varchar(255) DEFAULT NULL,
+  `letter_photo_2` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`letter_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_letters`
+--
+
+LOCK TABLES `user_letters` WRITE;
+/*!40000 ALTER TABLE `user_letters` DISABLE KEYS */;
+INSERT INTO `user_letters` VALUES (25,'13432','123',0,'哈哈哈哈哈哈哈哈哈哈','哈哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈','2020-10-03 09:39:24','cloud://chenchenxiaojian-jc1zw.6368-chenchenxiaojian-jc1zw-1303822918/1601688463139.png','cloud://chenchenxiaojian-jc1zw.6368-chenchenxiaojian-jc1zw-1303822918/1601688518026.png'),(26,'15013225799','13432',0,'你好吗？你好吗？你好吗？你好吗？你好吗？','你好吗？\n你好吗？你好吗？\n你好吗？\n你好吗？你好吗？你好吗？\n你好吗？你好吗？\n你好吗？\n你好吗？','2020-10-03 09:49:46','cloud://chenchenxiaojian-jc1zw.6368-chenchenxiaojian-jc1zw-1303822918/1601689764189.png','cloud://chenchenxiaojian-jc1zw.6368-chenchenxiaojian-jc1zw-1303822918/1601689773133.png');
+/*!40000 ALTER TABLE `user_letters` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2020-10-03  9:56:27
